@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Task } from '../../shared/models/task.model';
 import {TasksService} from "../../services/tasks.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-task-item',
@@ -13,7 +13,7 @@ export class TaskItemComponent {
   // Add task item logic and properties here.
   task: Task | undefined;
 
-  constructor(private route: ActivatedRoute, private tasksService: TasksService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private tasksService: TasksService) {}
 
   ngOnInit() {
     // Get the task ID from the URL parameter
@@ -26,5 +26,17 @@ export class TaskItemComponent {
       // Get the task details based on the task ID
       this.task = this.tasksService.getTaskById(id);
     }
+  }
+
+  updateTaskCompletion() {
+    // Update the task completion status using the TasksService
+    if (this.task) {
+      this.tasksService.updateTask(this.task);
+    }
+  }
+
+  goBack() {
+    // Navigate back to the task list
+    this.router.navigate(['/tasks']);
   }
 }

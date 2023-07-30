@@ -1,17 +1,14 @@
 <!-- Display individual task details here -->
-<!--<p>Task-item works</p>-->
-<!--<div>-->
-<!--  <h3>{{ task.title }}</h3>-->
-<!--  <p>{{ task.description }}</p>-->
-<!--  <p>Due Date: {{ task.dueDate }}</p>-->
-<!--  <p>Priority: {{ task.priority }}</p>-->
-<!--  &lt;!&ndash; Add buttons for editing and deleting the task if needed &ndash;&gt;-->
-<!--</div>-->
 
-<div *ngIf="task">
+<div *ngIf="task" class="container">
   <h2>{{ task.title }}</h2>
   <p>Description: {{ task.description }}</p>
   <p>Due Date: {{ task.dueDate }}</p>
   <p>Priority: {{ task.priority }}</p>
   <p>Completed: {{ task.completed ? 'Yes' : 'No' }}</p>
+
+  <!-- Add a checkbox to mark the task as completed -->
+  <input type="checkbox" [(ngModel)]="task.completed" (change)="updateTaskCompletion()">
+
+  <button (click)="goBack()">Go Back</button>
 </div>
