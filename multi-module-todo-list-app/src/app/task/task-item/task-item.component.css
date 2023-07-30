@@ -18,10 +18,21 @@
   margin-bottom: 8px;
 }
 
-/*!* Optional: Center the container horizontally on the page *!*/
+/* Add a different background color for completed tasks */
+.container.completed {
+  background-color: #f0f8ff; /* Example light blue color for completed tasks */
+}
+
+/* Add styles for the checkbox */
+.container input[type='checkbox'] {
+  margin-right: 8px;
+}
+
+/* Optional: Center the container horizontally on the page */
 /*:host {*/
 /*  display: flex;*/
 /*  justify-content: center;*/
 /*  align-items: center;*/
 /*  height: 100vh;*/
 /*}*/
+
