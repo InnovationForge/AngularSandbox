@@ -8,8 +8,8 @@ import {TaskFormComponent} from "./task-form/task-form.component";
 
 const routes: Routes = [
   { path: 'tasks', component: TaskListComponent },
-  { path: 'tasks/:id', component: TaskItemComponent },
   { path: 'tasks/new', component: TaskFormComponent },
+  { path: 'tasks/:id', component: TaskItemComponent },
   { path: 'tasks/:id/edit', component: TaskFormComponent },
   // Add other routes for task-related components as needed.
 ];

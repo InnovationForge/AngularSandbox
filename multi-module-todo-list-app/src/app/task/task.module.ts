@@ -6,6 +6,7 @@ import { TaskFormComponent } from './task-form/task-form.component';
 import { TaskFilterComponent } from './task-filter/task-filter.component';
 import { TaskSearchComponent } from './task-search/task-search.component';
 import { TaskNotificationComponent } from './task-notification/task-notification.component';
+import {TaskRoutingModule} from "./task-routing.module";
 
 
 
@@ -19,7 +20,8 @@ import { TaskNotificationComponent } from './task-notification/task-notification
     TaskNotificationComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TaskRoutingModule
   ]
 })
 export class TaskModule { }
