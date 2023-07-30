@@ -1,1 +1,27 @@
 /* Add styles for the task item here */
+/* Example CSS for TaskItemComponent */
+.container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.container p {
+  margin-bottom: 8px;
+}
+
+/*!* Optional: Center the container horizontally on the page *!*/
+/*:host {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  height: 100vh;*/
+/*}*/
