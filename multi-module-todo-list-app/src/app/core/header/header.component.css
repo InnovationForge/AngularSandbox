@@ -1,0 +1,17 @@
+/* Add your header styles here, e.g., background color, font styles, etc. */
+header {
+  background-color: #333;
+  padding: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Add other custom styles for the header as needed. */
