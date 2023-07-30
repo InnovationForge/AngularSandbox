@@ -1,11 +1,18 @@
 <!-- Add the form fields for creating/editing a task here -->
-<p>task-form works</p>
-<!--<form>-->
-<!--  <label>Title:</label>-->
-<!--  <input type="text" [(ngModel)]="taskTitle" name="taskTitle" />-->
+<form (ngSubmit)="createTask()">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" [(ngModel)]="newTask.title" required>
 
-<!--  &lt;!&ndash; Add other form fields for description, due date, priority, etc. &ndash;&gt;-->
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" [(ngModel)]="newTask.description"></textarea>
 
-<!--  &lt;!&ndash; Add buttons to submit the form and cancel the action if needed &ndash;&gt;-->
-<!--</form>-->
+  <label for="dueDate">Due Date:</label>
+  <input type="date" id="dueDate" name="dueDate" [(ngModel)]="newTask.dueDate">
 
+  <label for="priority">Priority:</label>
+  <select id="priority" name="priority" [(ngModel)]="newTask.priority">
+    <option [value]="priority" *ngFor="let priority of priorities">{{ priority }}</option>
+  </select>
+
+  <button type="submit">Create Task</button>
+</form>

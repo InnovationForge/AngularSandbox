@@ -1,7 +1,15 @@
 <!-- Add your task list display here, e.g., a list of tasks -->
-<p>task-list works</p>
+<!--<p>task-list works</p>-->
 <!--<ul>-->
 <!--  <li *ngFor="let task of tasks">-->
 <!--    {{ task.title }} - {{ task.dueDate }}-->
 <!--  </li>-->
 <!--</ul>-->
+
+<table>
+  <tr *ngFor="let task of tasks" (click)="showTaskDetails(task.id)">
+    <td>{{ task.title }}</td>
+    <td>{{ task.dueDate }}</td>
+    <td>{{ task.priority }}</td>
+  </tr>
+</table>

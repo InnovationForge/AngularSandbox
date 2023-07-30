@@ -7,6 +7,7 @@ import { TaskFilterComponent } from './task-filter/task-filter.component';
 import { TaskSearchComponent } from './task-search/task-search.component';
 import { TaskNotificationComponent } from './task-notification/task-notification.component';
 import {TaskRoutingModule} from "./task-routing.module";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -21,6 +22,7 @@ import {TaskRoutingModule} from "./task-routing.module";
   ],
   imports: [
     CommonModule,
+    FormsModule,
     TaskRoutingModule
   ]
 })
