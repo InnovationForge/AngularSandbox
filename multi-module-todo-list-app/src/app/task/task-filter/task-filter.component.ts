@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-task-filter',
@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./task-filter.component.css'],
 })
 export class TaskFilterComponent {
-  // Add task filter logic and properties here.
+  selectedPriority: string | null = null;
+  selectedDueDate: string | null = null;
+
+  @Output() filterApplied = new EventEmitter<{ priority: string | null; dueDate: string | null }>();
+
+  priorities: string[] = ['All', 'Low', 'Medium', 'High'];
+
+  applyFilters() {
+    this.filterApplied.emit({
+      priority: this.selectedPriority,
+      dueDate: this.selectedDueDate,
+    });
+  }
 }

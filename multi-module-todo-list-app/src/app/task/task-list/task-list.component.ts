@@ -20,4 +20,11 @@ export class TaskListComponent implements OnInit {
   showTaskDetails(taskId: number) {
     this.router.navigate(['/tasks', taskId]); // Navigate to the task details page with the task ID as a parameter
   }
+
+  onFilterApplied(filter: { priority: string | null; dueDate: string | null }) {
+    const { priority, dueDate } = filter;
+
+    // Get the filtered tasks from the service based on selected filters
+    this.tasks = this.tasksService.getFilteredTasks(priority, dueDate);
+  }
 }

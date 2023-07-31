@@ -1,8 +1,14 @@
 <!-- Add your task list display here, e.g., a list of tasks -->
 
+<!-- TaskFilterComponent for filtering tasks -->
 
+
+<!-- TaskListComponent showing the filtered tasks -->
 <table>
   <thead>
+  <tr>
+    <td colspan="5"><app-task-filter (filterApplied)="onFilterApplied($event)"></app-task-filter></td>
+  </tr>
   <tr>
     <th>Title</th>
     <th>Description</th>

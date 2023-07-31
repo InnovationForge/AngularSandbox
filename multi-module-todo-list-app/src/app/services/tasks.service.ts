@@ -59,4 +59,13 @@ export class TasksService {
       this.tasks.splice(index, 1);
     }
   }
+
+  // Method to get filtered tasks based on priority and dueDate
+  getFilteredTasks(priority: string | null, dueDate: string | null): Task[] {
+    return this.tasks.filter((task) => {
+      const hasPriority = priority === 'All' || task.priority === priority;
+      const hasDueDate = dueDate === null || (task.dueDate && dueDate === task.dueDate.toISOString().substr(0, 10));
+      return hasPriority && hasDueDate;
+    });
+  }
 }
