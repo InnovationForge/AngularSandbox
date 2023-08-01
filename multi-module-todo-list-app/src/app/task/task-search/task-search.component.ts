@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-task-search',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./task-search.component.css'],
 })
 export class TaskSearchComponent {
-  // Add task search logic and properties here.
+  searchTerm: string = '';
+
+  @Output() searchPerformed = new EventEmitter<string>();
+
+  onSearchChange() {
+    this.searchPerformed.emit(this.searchTerm);
+  }
 }

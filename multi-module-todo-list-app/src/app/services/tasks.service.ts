@@ -68,4 +68,16 @@ export class TasksService {
       return hasPriority && hasDueDate;
     });
   }
+
+// Method to get searched tasks based on the search query
+  getSearchedTasks(searchQuery: string): Task[] {
+    searchQuery = searchQuery.toLowerCase().trim();
+    return this.tasks.filter((task) => {
+      const taskDescription = task.description?.toLowerCase() || ''; // Use empty string if description is undefined
+      return (
+        task.title.toLowerCase().includes(searchQuery) ||
+        taskDescription.includes(searchQuery)
+      );
+    });
+  }
 }

@@ -27,4 +27,9 @@ export class TaskListComponent implements OnInit {
     // Get the filtered tasks from the service based on selected filters
     this.tasks = this.tasksService.getFilteredTasks(priority, dueDate);
   }
+
+  onSearchPerformed(searchQuery: string) {
+    // Get the searched tasks from the service based on the search query
+    this.tasks = this.tasksService.getSearchedTasks(searchQuery);
+  }
 }
